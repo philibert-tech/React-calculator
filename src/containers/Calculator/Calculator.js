@@ -10,7 +10,6 @@ class Calculator extends Component{
     state = {
         equation:'',
         entries:['c', ' ', '+', '1', '2', '3', '-', '4', '5', '6', '*', '7', '8', '9', '/', '.', '0', '=','%', '(' ,')' ] 
- 
     }
 
     handleKeypadEntry = (event) => {
@@ -54,26 +53,30 @@ class Calculator extends Component{
         }
     }
     
-    // componentWillMount deprecated in React 16.3
-    componentDidMount(){
+    /* the componentDidMount function is used after all component 
+    are loaded so as to add the eventListener "keydown"*/
+    componentDidMount(){   
         document.addEventListener("keydown", this.handleKeypadEntry);
     }
 
-    appendInDisplayer = (char) => {
+    /*appendInDisplayer is used to add the characters into the inputfield*/
+    appendInDisplayer = (input) => {
         let equation = this.state.equation
-        let newEquation = equation + char;
+        let newEquation = equation + input;
         
         this.setState({
             equation:newEquation
         })
     }
 
+     /*clearDisplayer is used to clear the inputfield*/
     clearDisplayer = () => {
         this.setState({
             equation:""
         })
     }
 
+    /*determineValue is used to determine the result of the equation in the input field*/
     determineValue = () => {
         const equation = this.state.equation;
         try {
@@ -91,11 +94,11 @@ class Calculator extends Component{
         }
     }
 
-
     render(){
         let count = 0;
         let input = null;
 
+        /*looping through the entries and assigning*/
         const keyPad = [...this.state.entries]
         .map(entry =>{
             count ++;
@@ -132,52 +135,16 @@ class Calculator extends Component{
                 default:
                     input =   <div key={count} className={DivName}> <Numbers value={entry} clicked={()=>this.appendInDisplayer(entry)}/> </div>
                     break;              
-            }
-                
+            }             
             return (input);
-
         });
     
         return(
             
-
             <div className={classes.Calculator}>
-
-
                 <div className={classes.Parent}>
-                    {/* <div className={classes.Div1}> <Button styling={classes.Clear} value="c"  clicked={this.clearDisplayer}/> </div>
-                    <div className={classes.Div2}> <Input value={this.state.equation} /> </div>
-
-                    <div className={classes.Div3}> <Operators value="+" clicked={()=>this.appendInDisplayer("+")}/> </div>
-                    <div className={classes.Div4}> <Numbers value="1" clicked={()=>this.appendInDisplayer("1")}/> </div>
-                    <div className={classes.Div5}> <Numbers value="2" clicked={()=>this.appendInDisplayer("2")}/> </div>
-                    <div className={classes.Div6}> <Numbers value="3" clicked={()=>this.appendInDisplayer("3")}/> </div>
-
-                    <div className={classes.Div7}> <Operators value="-" clicked={()=>this.appendInDisplayer("-")}/> </div>
-                    <div className={classes.Div8}> <Numbers value="4" clicked={()=>this.appendInDisplayer("4")}/> </div>
-                    <div className={classes.Div9}> <Numbers value="5" clicked={()=>this.appendInDisplayer("5")}/> </div>
-                    <div className={classes.Div10}> <Numbers value="6" clicked={()=>this.appendInDisplayer("6")}/> </div>
-
-                    <div className={classes.Div11}> <Operators value="*" clicked={()=>this.appendInDisplayer("*")}/> </div>
-                    <div className={classes.Div12}> <Numbers value="7" clicked={()=>this.appendInDisplayer("7")}/> </div>
-                    <div className={classes.Div13}> <Numbers value="8" clicked={()=>this.appendInDisplayer("8")}/> </div>
-                    <div className={classes.Div14}> <Numbers value="9" clicked={()=>this.appendInDisplayer("9")}/> </div>
-
-                    <div className={classes.Div15}> <Operators value="/" clicked={()=>this.appendInDisplayer("/")}/> </div>
-                    <div className={classes.Div16}> <Button styling={classes.Special} value="."  clicked={()=>this.appendInDisplayer(".")}/> </div>
-                    <div className={classes.Div17}> <Numbers value="0" clicked={()=>this.appendInDisplayer("0")}/> </div>
-                    <div className={classes.Div18}> <Button styling={classes.EqualSign} value="="  clicked={this.DetermineValue}/> </div>
-
-                    <div className={classes.Div19}> <Operators value="%" clicked={()=>this.appendInDisplayer("%")}/> </div>
-                    <div className={classes.Div20}> <Button styling={classes.Special} value="("  clicked={()=>this.appendInDisplayer("(")}/> </div>
-                    <div className={classes.Div21}> <Button styling={classes.Special} value=")"  clicked={()=>this.appendInDisplayer(")")}/> </div> */}
-
                     {keyPad}
-                </div>
-
-                
-
- 
+                </div>                 
             </div>
 
         );

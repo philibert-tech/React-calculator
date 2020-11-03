@@ -4,8 +4,8 @@ import classes from './Operators.module.css';
 
 /**
  * Operator component
- * @param props props to be received by operator
- * @returns return a react component
+ * @param props props are a symbol as value and a function to append in displayer
+ * @returns returns a Component named Operator
  */
 const operator =(props)=>(
     <Button styling={classes.Operator} value={props.value} clicked={props.clicked}/>
