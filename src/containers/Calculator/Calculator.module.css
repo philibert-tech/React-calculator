@@ -24,12 +24,12 @@ height: 100%;
 font-size: 25px;
 }
 
-.Dot
+.Special
 {
 border-radius: 10px;
-background-color:#e5ea15;
+background-color:#534687;
 color: #fff;
-border-color:#e5ea15 ;
+border-color:#534687 ;
 width:100%;
 height: 100%;
 font-size: 25px;
@@ -49,10 +49,10 @@ font-size: 25px;
 
 .Parent {
     width:500px;
-    height:300px;
+    height:400px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 4px;
     grid-row-gap: 4px;
 
@@ -76,7 +76,10 @@ font-size: 25px;
     .Div15 { grid-area: 5 / 1 / 6 / 2; }
     .Div16 { grid-area: 5 / 2 / 6 / 3; }
     .Div17 { grid-area: 5 / 3 / 6 / 4; }
-    .Div18 { grid-area: 5 / 4 / 6 / 5; }
+    .Div18 { grid-area: 5 / 4 / 7 / 5; }
+    .Div19 { grid-area: 6 / 1 / 7 / 2; }
+    .Div20 { grid-area: 6 / 2 / 7 / 3; }
+    .Div21 { grid-area: 6 / 3 / 7 / 4; }
 
 
 @media (max-width:500px){

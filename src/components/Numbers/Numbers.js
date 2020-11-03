@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../components/Buttons/Button';
+import Button from '../Buttons/Button';
 import classes from './Numbers.module.css';
 
 const number =(props)=>(
