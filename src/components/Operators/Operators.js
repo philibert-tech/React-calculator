@@ -7,8 +7,8 @@ import classes from './Operators.module.css';
  * @param props props are a symbol as value and a function to append in displayer
  * @returns returns a Component named Operator
  */
-const operator =(props)=>(
-    <Button styling={classes.Operator} value={props.value} clicked={props.clicked}/>
+const operator = (props) => (
+    <Button styling={classes.Operator} value={props.value} clicked={props.clicked} />
 );
 
 export default operator;
