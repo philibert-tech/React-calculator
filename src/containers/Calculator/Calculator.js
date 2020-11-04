@@ -98,12 +98,13 @@ class Calculator extends Component{
         let count = 0;
         let input = null;
 
+        console.log(classes.Calculator);
+
         /*looping through the entries and assigning*/
         const keyPad = [...this.state.entries]
         .map(entry =>{
             count ++;
-            let DivName = {name:"classes.Div3"};
-
+            let DivName = "Calculator_Div" + count;
             switch(entry){
               
                 case"c":
